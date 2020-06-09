@@ -36,7 +36,7 @@ app.get('*', (req,res,next)=> {
     next()
 })
 app.get('/', (req,res)=> { res.render('partials/welcome') })
-app.get('/admin', (req,res)=> { res.redirect( "../admin/views/admin/login"); })
+app.get('/admin', (req,res)=> { res.render('../admin/views/adminArea') })
 
 // app.get('/', (req,res)=> { res.redirect('/orders') })
 
@@ -47,11 +47,6 @@ app.use('/orders', orders)
 // bring user routes
 const users = require('./routes/user-routes')
 app.use('/users', users)
-
-// bring admin routes
-const admin = require('./routes/admin-routes')
-app.use('/admin', admin)
-
 
 // listen to port 3000
 app.listen(3000, ()=> {

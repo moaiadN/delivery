@@ -14,8 +14,8 @@ var storage = multer.diskStorage({
   })
   
   var upload = multer({ storage: storage })
+// middleware to check if user is logged in
 
-  // middleware to check if user is logged in
 isAuthenticated = (req,res,next) => {
     if (req.isAuthenticated()) return next()
     res.redirect('/users/login')
