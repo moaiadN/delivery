@@ -1,0 +1,7 @@
+.nameField{
+    width: 49%;
+    float: left;
+}
+.nameField:first-child{
+    margin-right: 2%;
+}

@@ -1,0 +1,28 @@
+
+<%- include('../partials/header.ejs') -%>
+<%- include('../admin/navbar.ejs') -%>
+<div class="container">
+<div class="row mt-4">
+        
+    <div class="col-md-9 offset-md-1">
+        <div class="card">
+            <div class="card-body">
+                
+             <h1>Moaiad Alnakawa</h1>
+             
+             <p class="card-text"><%=order.orderBox%></p>
+                                
+             
+                 <a href="<%= '/orders/edit/' + order.id %>" class="btn btn-primary">Edit</a>
+                 <button class="btn btn-danger" onclick="deleteOrder()" id="deleteBtn" data-id="<%= order.id%>">Delete</button>
+
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+</div>
+
+<%- include('../partials/footer.ejs') -%>

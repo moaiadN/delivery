@@ -1,0 +1,33 @@
+<%- include('../partials/header.ejs') -%>
+<%- include('../partials/navbar.ejs') -%>
+<div class="container">
+    <div class="row mt-4">
+
+        <div class="col-md-9 offset-md-1">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="card-header">
+                         <label class="ml-5"> Name : </label> <span class="card-text mr-5"><%= user.name %></span>
+                         <label class="ml-5"> Phon No : </label><span class="card-text mr-lg-5"><%= user.phone %></span>
+                         <label class="ml-5"> Address : </label><span class="card-text"><%= user.address %></span>
+                    </div>
+                    <hr>
+                    <p class="card-text"><%= order.orderBox %></p>
+
+                    <% if ((user) && (user.id == order.user_id )) {%>
+                    <a href="<%= '/orders/edit/' + order.id %>" class="btn btn-primary">Edit</a>
+                    <button class="btn btn-danger" onclick="deleteOrder()" id="deleteBtn"
+                        data-id="<%= order.id%>">Delete</button>
+                    <%}%>
+                
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+</div>
+
+<%- include('../partials/footer.ejs') -%>
